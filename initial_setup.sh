@@ -7,7 +7,7 @@ echo "> git"
 echo "> vim"
 echo "> dotnet"
 echo "> curl"
-echo "> dotnet_project_template.sh (made by @wbail)"
+echo "> dotnet_create_project.sh (made by @wbail)"
 
 update() {
     apt-get update
@@ -28,7 +28,7 @@ install_wget() {
 }
 
 install_dotnet_project_template() {
-    wget https://github.com/wbail/hacks/dotnet_project_template.sh -O /mnt/c/Users/gbail/source/repos/
+    wget https://github.com/wbail/hacks/dotnet_create_project.sh -O /mnt/c/Users/gbail/source/repos/dotnet_create_project.sh
 }
 
 install_dotnet() {
@@ -58,6 +58,11 @@ config_git() {
     git config --global init.defaultBranch main
 }
 
+create_alias_for_projects_folder() {
+    echo 'alias p="cd /mnt/c/Users/gbail/source/repos/"' >> ~/.bashrc
+    source ~/.bashrc
+}
+
 main() {
     update
     upgrade
@@ -67,6 +72,8 @@ main() {
     install_dotnet
     install_vim
     install_curl
+    install_dotnet_project_template
+    create_alias_for_projects_folder
 }
 
 main
