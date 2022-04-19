@@ -58,7 +58,37 @@ config_git() {
     git config --global init.defaultBranch main
 }
 
+backup_bashrc() {
+    cp ~/.bashrc ~/.bashrc_backup
+}
+
+add_git_branch_on_terminal() {
+    
+    backup_bashrc
+
+    : '
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+if [ "$color_prompt" = yes ]; then
+ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
+else
+ PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w$(parse_git_branch)\$ '
+fi
+
+# THE SIX LINES BELOW are the default prompt and the unset (which were in the original .bashrc)
+#if [ "$color_prompt" = yes ]; then
+#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+#unset color_prompt force_color_prompt
+    '
+}
+
 create_alias_for_projects_folder() {
+    backup_bashrc
     echo 'alias p="cd /mnt/c/Users/gbail/source/repos/"' >> ~/.bashrc
     source ~/.bashrc
 }
