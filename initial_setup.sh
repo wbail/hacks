@@ -7,6 +7,10 @@ echo "> git"
 echo "> vim"
 echo "> dotnet"
 echo "> curl"
+echo "> gcc"
+echo "> cmake"
+echo "> rsync"
+echo "> zip"
 echo "> dotnet_create_project.sh (made by @wbail)"
 
 update() {
@@ -87,6 +91,26 @@ fi
     '
 }
 
+install_gcc() {
+    update
+    sudo apt install -y g++
+}
+
+install_cmake() {
+    update
+    sudo apt install -y gdb make ninja-build
+}
+
+install_rsync() {
+    update
+    sudo apt install -y rsync
+}
+
+install_zip() {
+    update
+    sudo apt install -y zip
+}
+
 create_alias_for_projects_folder() {
     backup_bashrc
     echo 'alias p="cd /mnt/c/Users/gbail/source/repos/"' >> ~/.bashrc
@@ -102,6 +126,10 @@ main() {
     install_dotnet
     install_vim
     install_curl
+    install_gcc
+    install_cmake
+    install_rsync
+    install_zip
     install_dotnet_project_template
     create_alias_for_projects_folder
 }
