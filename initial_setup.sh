@@ -12,6 +12,7 @@ echo "> cmake"
 echo "> rsync"
 echo "> zip"
 echo "> dotnet_create_project.sh (made by @wbail)"
+echo "> dotnet ef"
 
 update() {
     apt-get update
@@ -117,6 +118,10 @@ create_alias_for_projects_folder() {
     source ~/.bashrc
 }
 
+install_dotnet_ef_core() {
+    dotnet tool install --global dotnet-ef
+}
+
 main() {
     update
     upgrade
@@ -124,6 +129,7 @@ main() {
     install_git
     config_git
     install_dotnet
+    install_dotnet_ef_core
     install_vim
     install_curl
     install_gcc
