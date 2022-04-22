@@ -13,6 +13,7 @@ echo "> rsync"
 echo "> zip"
 echo "> dotnet_create_project.sh (made by @wbail)"
 echo "> dotnet ef"
+echo "> azure cli"
 
 update() {
     apt-get update
@@ -122,6 +123,10 @@ install_dotnet_ef_core() {
     dotnet tool install --global dotnet-ef
 }
 
+install_azure_cli() {
+    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+}
+
 main() {
     update
     upgrade
@@ -136,6 +141,7 @@ main() {
     install_cmake
     install_rsync
     install_zip
+    install_azure_cli
     install_dotnet_project_template
     create_alias_for_projects_folder
 }
