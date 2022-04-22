@@ -14,6 +14,7 @@ echo "> zip"
 echo "> dotnet_create_project.sh (made by @wbail)"
 echo "> dotnet ef"
 echo "> azure cli"
+echo "> azure func cli"
 
 update() {
     apt-get update
@@ -72,7 +73,8 @@ add_git_branch_on_terminal() {
     
     backup_bashrc
 
-    : '
+    <<comment
+"
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -89,8 +91,9 @@ fi
 #else
 #    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 #fi
-#unset color_prompt force_color_prompt
-    '
+#unset color_prompt force_color_prompt"
+comment
+
 }
 
 install_gcc() {
@@ -127,6 +130,14 @@ install_azure_cli() {
     curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 }
 
+install_azure_func_cli() {
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/debian/$(lsb_release -rs | cut -d'.' -f 1)/prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    update
+    sudo apt-get install -y azure-functions-core-tools-4
+}
+
 main() {
     update
     upgrade
@@ -142,6 +153,7 @@ main() {
     install_rsync
     install_zip
     install_azure_cli
+    install_azure_func_cli
     install_dotnet_project_template
     create_alias_for_projects_folder
 }
