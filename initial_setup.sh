@@ -54,6 +54,22 @@ install_vim() {
     apt-get install -y vim
 }
 
+backup_vimrc() {
+	sudo cp /etc/vim/vimrc /etc/vim/vimrc_backup
+}
+
+configure_vim_settings() {
+<<comment	
+"
+syntax on
+set number
+set tabstop=4
+set shiftwidth=4
+set background=dark
+"
+comment
+}
+
 install_curl() {
     update
     apt-get install -y curl
