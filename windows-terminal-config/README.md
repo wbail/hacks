@@ -16,3 +16,4 @@
 14. On Visual Studio Code change the fonts to ```'CaskaydiaCove Nerd Font'``` replacing the current value
 15. On powershell terminal run: ```Install-Module -Name Terminal-Icons -Repository PSGallery```
 16. On powershell terminal run: ```Import-Module -Name Terminal-Icons```
+17. On powershell run ```.\$PROFILE```
