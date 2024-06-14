@@ -37,3 +37,7 @@ privacy.donottrackheader.enabled = true
 
 privacy.globalprivacycontrol.was_ever_enabled = true
 services.sync.prefs.sync-seen.privacy.globalprivacycontrol.enabled = true
+
+### video / windows terminal
+
+widget.windows.window_occlusion_tracking.enabled = false
