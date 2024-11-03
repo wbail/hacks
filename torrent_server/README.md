@@ -97,4 +97,4 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 docker --version
 ```
 
-
+- qbittorrent (arm docker container): ```git clone https://github.com/qbittorrent/docker-qbittorrent-nox```
