@@ -1,3 +1,5 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
 $FolderOptionsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer"
 Set-ItemProperty -Path $FolderOptionsPath -Name ShowFrequent -Value '0'
 Set-ItemProperty -Path $FolderOptionsPath -Name ShowRecent -Value '0'
