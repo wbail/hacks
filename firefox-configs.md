@@ -36,6 +36,7 @@ privacy.donottrackheader.enabled = true
 ### tell websites not sell
 
 privacy.globalprivacycontrol.was_ever_enabled = true
+
 services.sync.prefs.sync-seen.privacy.globalprivacycontrol.enabled = true
 
 ### disable WebRTC [implement STUN (Session Traversal Utilities for Nat), a protocol that allows to discover the public IP address]:  
@@ -45,3 +46,7 @@ media.peerconnection.enabled = false
 ### video / windows terminal
 
 widget.windows.window_occlusion_tracking.enabled = false
+
+### ui density
+
+browser.uidensity = 1
