@@ -50,3 +50,8 @@ widget.windows.window_occlusion_tracking.enabled = false
 ### ui density
 
 browser.uidensity = 1
+
+### open tab right side
+
+browser.tabs.insertRelatedAfterCurrent = false
+
