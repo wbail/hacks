@@ -1,0 +1,9 @@
+### Extensions
+
+- disasmo
+
+### dotnet cli
+
+- dotnet tool install --global ef
+- dotnet tool install --global dotnet-coverage
+  - https://learn.microsoft.com/en-us/dotnet/core/additional-tools/dotnet-coverage
