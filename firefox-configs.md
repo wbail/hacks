@@ -51,6 +51,10 @@ widget.windows.window_occlusion_tracking.enabled = false
 
 browser.uidensity = 1
 
+### acrylic
+widget.windows.mica = true
+
+
 ### open tab right side
 
 browser.tabs.insertRelatedAfterCurrent = false
