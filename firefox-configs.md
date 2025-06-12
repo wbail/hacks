@@ -54,8 +54,15 @@ browser.uidensity = 1
 ### acrylic
 widget.windows.mica = true
 
-
 ### open tab right side
 
 browser.tabs.insertRelatedAfterCurrent = false
+
+### enable update logs
+
+app.update.log = true
+
+### Update url
+
+https://aus5.mozilla.org/update/6/Firefox/[VERSION]/20240416043247/WINNT_x86_64-msvc-x64/en-US/release/Windows_NT%252010.0.0.0.22631.3447%2520(x64)/ISET:SSE4_2,MEM:32702/default/default/update.xml?force=1
 
