@@ -1,0 +1,21 @@
+### windows softwares initial setup
+
+- windbg
+```winget install Microsoft.WinDbg```
+- perfview
+- visual studio
+- visual studio code
+- notepad++
+- libre office
+- firefox
+- docker
+- git
+- python
+- java
+- qbittorrent
+- mullvad vpn
+- dotnet framework
+- gcc
+- curl
+- 7zip
+- putty: https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
