@@ -1,7 +1,7 @@
 ### windows softwares initial setup
 
 - windbg
-```winget install Microsoft.WinDbg```
+   ```winget install Microsoft.WinDbg```
 - perfview
 - visual studio
 - visual studio code
