@@ -75,6 +75,10 @@ services:
 docker run --entrypoint="" --rm -it docker.io/gitea/act_runner:latest act_runner generate-config > runner-config.yml
 ```
 
+- setup the network (IMPORTANT)
+  1. check the docker network name: ```docker network ls```
+  2. in the ```runner-config.yml``` file fill out the network value (inside the container) section
+
 ### Example of action (using dotnet)
 
 The files needs to be inside the ```<project-folder>/.gitea/workflows/```
