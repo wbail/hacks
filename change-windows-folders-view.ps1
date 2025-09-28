@@ -7,3 +7,6 @@ Set-ItemProperty -Path $FolderOptionsPath -Name ShowRecommendations -Value '0'
 
 $FolderOptionsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
 Set-ItemProperty -Path $FolderOptionsPath -Name AutoCheckSelect -Value '1'
+
+$FolderOptionsPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState"
+Set-ItemProperty -Path $FolderOptionsPath -Name FullPath -Value '1'
