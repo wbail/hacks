@@ -12,7 +12,9 @@ While setting a static IP address directly on the Raspberry Pi is straightforwar
 
 You can find the MAC address for your Raspberry Pi by running the following command:
 
+```
 nmcli -o device show
+```
 
 A list of all available network devices will be displayed. The MAC address is listed as "GENERAL.HWADDR" on each device and consists of six pairs of hexadecimal numbers separated by a colon. For example, the Ethernet port on the Raspberry Pi is normally called eth0. It may have a MAC address similar to DC:A6:32:CD:F4:A3.
 Setting the Static IP Address on the Raspberry Pi
@@ -29,11 +31,13 @@ Step 1:
 
 Before we can begin you will need to find the name of the network interface you want to set as static. You can do this by running the following command in a terminal to display a list of available network interfaces.
 
+```
 sudo nmcli -p connection show
+```
 
 You should see a listing like the one below.
 
-
+```
 ======================================
 NetworkManager connection profiles
 ======================================
@@ -42,6 +46,7 @@ NAME                UUID                                    TYPE        DEVICE
 Wired connection 1  bd220d18-7d6a-36a5-9820-4f67de2c01fc    ethernet    eth0
 mywifi              2359440b-8991-4c86-a905-b011dced4587    wifi        wlan0
 lo                  c29ba7c5-98ff-4fa0-8d8e-06b30b8ec384    loopback    lo
+```
 
 The default name for the wired Ethernet connection for English locales is "Wired connection 1". This name may be different if you use another language. For example, the German name will be "Kabelgebundene Verbindung 1". To find the correct connection name, look for the row with a Type of "ethernet".
 
